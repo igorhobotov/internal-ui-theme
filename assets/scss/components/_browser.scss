@@ -1,0 +1,176 @@
+@import 'select2/dist/css/select2';
+
+.Browser {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Browser-controls {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -3px;
+    padding: 0 40px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.Browser-tabs {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+}
+
+.Browser-links {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Browser-tab {
+    display: flex;
+    white-space: nowrap;
+    max-width: 8rem;
+
+    a {
+        flex: auto;
+        font-size: 20px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 3px solid transparent;
+        border-top: 1px solid transparent;
+        color: $color-text;
+
+        &:hover {
+            border-bottom-color: $color-link;
+
+            svg {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    svg {
+        @include margin-inline(end, 0.125rem);
+        pointer-events: none;
+        opacity: 0.6;
+        position: relative;
+        top: 2px;
+    }
+
+    &.is-active {
+
+        a {
+            border-bottom-color: $color-link;
+            color: $color-link;
+        }
+
+        svg {
+            opacity: 0.9;
+        }
+    }
+
+    &.is-disabled {
+        a {
+            opacity: 0.5;
+        }
+    }
+
+    + .Browser-tab {
+        padding-left: 20px;
+    }
+}
+
+.Browser-tab--html {
+
+}
+
+.Browser-tab--view {
+    svg {
+        top: 1px;
+    }
+}
+
+.Browser-tab--context {
+    svg {
+        top: 0px;
+    }
+}
+
+.Browser-tab--assets {
+    svg {
+        top: 1px;
+    }
+}
+
+.Browser-tab--info {
+    // margin-left: auto;
+    svg {
+        top: 1px;
+    }
+}
+
+.Browser-tab--meta {
+
+}
+
+.Browser-panel {
+    flex: 1 1 auto;
+    display: none;
+    overflow: auto;
+    // position: relative;
+    width: 100%;
+    background-color: $color-background-offset;
+    padding: 20px;
+    border: 3px solid $color-frame-border;
+
+    &.is-active {
+        display: flex;
+    }
+
+    .Code {
+        background-color: $color-background-offset;
+        pre {
+            background-color: $color-background-offset;
+            padding: 0;
+        }
+    }
+    > .Meta {
+        flex-basis: 100%;
+    }
+}
+
+.Browser-panel--preview {
+    padding: 0;
+    min-height: 100px;
+}
+
+.Browser-panel--html {
+    max-height: 600px;
+}
+
+.Browser-notes {
+    padding-top: 20px;
+}
+
+.Browser-resources {
+    padding: 0;
+}
+
+.Browser-isEmptyNote {
+    font-style: italic;
+    color: $color-text;
+    opacity: 0.6;
+}

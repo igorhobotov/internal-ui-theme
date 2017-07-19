@@ -1,0 +1,130 @@
+.Pen {
+    background: white;
+    padding: 20px 40px 40px;
+
+    @include mq($until: navCollapse) {
+        padding: 20px;
+    }
+
+    &.is-resizing {
+        cursor: grabbing;
+
+        .Pen-handle {
+            cursor: grabbing;
+        }
+    }
+}
+
+.Pen-header {
+    display: flex;
+    flex: 0 0 auto;
+    max-height: 3rem;
+    margin-bottom: 20px;
+    align-items: center;
+
+    .Status {
+        padding-right: 20px;
+    }
+
+    @include mq($until: navCollapse) {
+        margin: 0;
+        border-bottom: 1px solid $color-frame-border;
+        padding: 0.75rem;
+
+        .Status .Status-label {
+            position: relative;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            background-color: #fff !important;
+            border-radius: 100%;
+            border-style: solid;
+            border-width: 0.125rem;
+            padding: 0.25rem;
+            color: transparent !important;
+        }
+    }
+}
+
+.Pen-title {
+    font-size: 34px;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+}
+
+.Pen-previewLink {
+    display: flex;
+    text-decoration: none;
+
+    svg {
+        @include margin-inline(start, 5px);
+
+        fill: $color-link;
+    }
+
+    &:hover svg {
+        fill: darken($color-link, 15%);
+    }
+}
+
+.Pen-description {
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.Pen-preview {
+    width: 100%;
+}
+
+.Pen-handle {
+    @include dragHandle;
+
+    flex: 0 0 auto;
+    height: $handle-size;
+    margin: 0 $handle-size;
+    background: transparent url("../img/icon-drag--horizontal.svg") no-repeat 50% 50%;
+    background-size: 16px 3px;
+    cursor: ns-resize;
+
+    @include mq($until: navCollapse) {
+        display: none;
+    }
+}
+
+.Pen-handle--browser {
+    display: block;
+    pointer-events: all;
+    visibility: visible;
+}
+
+.Pen-info {
+    position: relative;
+
+    @include mq($until: navCollapse) {
+        //display: none;
+    }
+}
+
+.Pen-variant {
+    margin-bottom: 40px;
+}
+
+.Pen-variantHeader {
+    margin-bottom: 20px;
+}
+
+.Pen-variantDescription {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.Pen-variantTitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

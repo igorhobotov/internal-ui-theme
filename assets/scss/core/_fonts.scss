@@ -1,0 +1,36 @@
+/* Hack */
+@font-face {
+    font-family: Hack;
+    src:
+        url("../fonts/hack-regular-webfont.woff2") format("woff2"),
+        url("../fonts/hack-regular-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Hack;
+    src:
+        url("../fonts/hack-bold-webfont.woff2") format("woff2"),
+        url("../fonts/hack-bold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Hack;
+    src:
+        url("../fonts/hack-italic-webfont.woff2") format("woff2"),
+        url("../fonts/hack-italic-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Hack;
+    src:
+        url("../fonts/hack-bolditalic-webfont.woff2") format("woff2"),
+        url("../fonts/hack-bolditalic-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}

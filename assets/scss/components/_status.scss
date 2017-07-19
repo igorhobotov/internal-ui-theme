@@ -1,0 +1,66 @@
+.Status,
+.Status-dots {
+    display: flex;
+    align-items: center;
+}
+
+.Status-dot {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+
+    .Status--ready & {
+        background-color: $green;
+        border-color: $green;
+    }
+
+    .Status--wip & {
+        background-color: $orange;
+        border-color: $orange;
+    }
+
+    .Status--prototype & {
+        background-color: $red;
+        border-color: $red;
+    }
+}
+
+.Status-dot + .Status-dot {
+    @include margin-inline(start, 3px);
+}
+
+.Status-label {
+    @include font(caption);
+    display: inline-block;
+    border-radius: 2rem;
+    padding: 0.125rem 0.75rem;
+    color: white;
+    white-space: nowrap;
+
+    .Status--ready & {
+        background-color: $green;
+        border-color: $green;
+    }
+
+    .Status--wip & {
+        background-color: $orange;
+        border-color: $orange;
+    }
+
+    .Status--prototype & {
+        background-color: $red;
+        border-color: $red;
+    }
+}
+
+.Status-label + .Status-label {
+    @include margin-inline(start, 0.25rem);
+}
+
+.Status--labelled {
+    .Status-label {
+        @include margin-inline(end, 0.75rem);
+    }
+}

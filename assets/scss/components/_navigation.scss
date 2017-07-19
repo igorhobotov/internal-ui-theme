@@ -1,0 +1,16 @@
+.Navigation {
+    display: block;
+    min-width: 100%;
+}
+
+.Navigation-group {
+    @include clearfix;
+
+    & + & {
+        margin-top: 1.5rem;
+    }
+}
+
+.navigation-search {
+    padding: 0 0 20px;
+}
