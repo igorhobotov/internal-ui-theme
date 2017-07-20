@@ -25,55 +25,11 @@
     width: 2em;
 }
 
-.icon--info {
-    color: $blue-l;
-}
-
 .icon--highlight {
-    color: $purple;
+    color: $green;
 }
 
 .icon--middle {
     vertical-align: middle;
     margin-top: -.25em;
-}
-
-.icon--left {
-    margin-right: .25em;
-}
-
-.icon--right {
-    margin-left: .25em;
-}
-
-// Icon thumbnail
-
-.icon-thumbnail-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.icon-thumbnail {
-    display: inline-block;
-    background: $grey;
-    height: 40px;
-    width: 40px;
-    line-height: 3;
-    text-align: center;
-    margin-right: 10px;
-    flex-shrink: 0;
-
-    &--inverse {
-        background: $black;
-
-        .icon {
-            color: $white;
-        }
-    }
-}
-
-.icon-thumbnail__text {
-    font-size: 20px;
-    line-height: 2;
 }

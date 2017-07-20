@@ -22,9 +22,11 @@
 .logo__energia {
     display: inline-block;
     vertical-align: top;
-    width: 1.3125em;
-    height: 1.4375em;
+    width: 2.5em;
+    height: 1.5em;
+    background-color: $green-l;
     background-repeat: no-repeat;
-    background-image: url("../img/logo-energia.svg");
+    mask-image: url("../img/logo-energia.svg");
+    mask-repeat: no-repeat;
     background-size: 100% auto;
 }

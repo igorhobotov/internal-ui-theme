@@ -43,18 +43,12 @@
 
     a {
         flex: auto;
-        font-size: 20px;
-        text-decoration: none;
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 3px solid transparent;
-        border-top: 1px solid transparent;
-        color: $color-text;
+        border-bottom: 0.25em solid transparent;
+        padding: 0.875em 1.25em;
+        font-weight: bold;
 
         &:hover {
-            border-bottom-color: $color-link;
+            border-bottom-color: $grey-l;
 
             svg {
                 opacity: 0.9;
@@ -74,7 +68,7 @@
 
         a {
             border-bottom-color: $color-link;
-            color: $color-link;
+            color: $green;
         }
 
         svg {
@@ -86,10 +80,6 @@
         a {
             opacity: 0.5;
         }
-    }
-
-    + .Browser-tab {
-        padding-left: 20px;
     }
 }
 

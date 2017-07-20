@@ -201,3 +201,207 @@
         clear: both;
     }
 }
+
+@mixin box-clip()
+{
+    background-clip: border-box;
+    box-sizing: border-box;
+    background-origin: border-box;
+}
+
+@mixin clear-input()
+{
+    appearance: none;
+    border: none;
+    border-width: 0;
+    border-radius: 0;
+    outline: none;
+    outline-width: 0;
+    padding: 0;
+}
+
+@mixin transform-all( $speed )
+{
+    transition: all $speed cubic-bezier(0.470, 0.000, 0.745, 0.715);
+}
+
+@mixin box-shadow ( $x, $y, $blur, $spread, $color )
+{
+    box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin box-shadow-inner ( $x, $y, $blur, $color )
+{
+    box-shadow: inset $x $y $blur $color;
+}
+
+/* ==========================================================================
+Fluid type
+========================================================================== */
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size)
+{
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
+    {
+        & {
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+$min_width: 480px;
+$max_width: 1680px;
+$min_font: 16px;
+$max_font: 18px;
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+/* ==========================================================================
+Fluid size
+========================================================================== */
+@mixin fluid-size($attr, $min-screen, $max-screen, $min-width, $max-width)
+{
+    $u1: unit($min-screen);
+    $u2: unit($max-screen);
+    $u3: unit($min-width);
+    $u4: unit($max-width);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
+    {
+        & {
+            #{$attr}: $min-width;
+
+            @media screen and (min-width: $min-screen) {
+                #{$attr}: calc(#{$min-width} + #{strip-unit($max-width - $min-width)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)}));
+            }
+
+            @media screen and (min-width: $max-screen) {
+                #{$attr}: $max-width;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+Inline SVG
+========================================================================== */
+@function str_replace($string, $search, $replace: '')
+{
+    $index: str-index($string, $search);
+    @if $index
+    {
+        @return str-slice($string, 1, $index - 1) + $replace + str_replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+@function url_encode($string)
+{
+    $map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    " ": "%20",
+    "!": "%21",
+    "*": "%2A",
+    "'": "%27",
+    '"': "%22",
+    "(": "%28",
+    ")": "%29",
+    ";": "%3B",
+    ":": "%3A",
+    "@": "%40",
+    "&": "%26",
+    "=": "%3D",
+    "+": "%2B",
+    "$": "%24",
+    ",": "%2C",
+    "/": "%2F",
+    "?": "%3F",
+    "#": "%23",
+    "[": "%5B",
+    "]": "%5D"
+    );
+
+    $new: $string;
+    @each $search, $replace in $map {
+        $new: str_replace($new, $search, $replace);
+    }
+    @return $new;
+}
+
+@function inline_svg( $string )
+{
+    @return url('data:image/svg+xml;charset=US-ASCII,#{url_encode($string)}');
+}
+
+/* ==========================================================================
+Gradient mixin
+========================================================================== */
+@mixin linear_gradient( $direction, $color-stops... )
+{
+    @if is_direction( $direction ) == false {
+        $color-stops: $direction, $color-stops;
+        $direction: 180deg;
+    }
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy_direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
+@function is_direction($value)
+{
+    $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+    @return $is-keyword or $is-angle;
+}
+
+@function legacy_direction( $value )
+{
+    @if is_direction( $value ) == false {
+        @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+    }
+
+    $conversion-map: (
+    to top : bottom,
+    to top right : bottom left,
+    to right top : left bottom,
+    to right : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom : top,
+    to bottom left : top right,
+    to left bottom : right top,
+    to left : right,
+    to left top : right bottom,
+    to top left : bottom right
+    );
+
+    @if map-has-key($conversion-map, $value) {
+        @return map-get($conversion-map, $value);
+    }
+
+    @return 90deg - $value;
+}

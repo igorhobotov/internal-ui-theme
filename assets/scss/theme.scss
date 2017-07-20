@@ -1,9 +1,9 @@
 $font-family-monospace: Hack, Consolas, Monaco, "Andale Mono", monospace !default;
 $font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif !default;
 
-$color-link: #990ae3 !default;
-$color-link-hover: #c0f !default;
-$color-text: #000 !default;
+$color-link: #0fac5f !default;
+$color-link-hover: #374454 !default;
+$color-text: #374454 !default;
 $color-heading: $color-text !default;
 
 $color-background: #fff !default;
@@ -12,9 +12,9 @@ $color-background-offset: #f2f2f2 !default;
 $color-border: #e4e4e4 !default;
 
 $color-ui-hover: $color-link !default;
-$color-ui-active: $color-link !default;
+$color-ui-active: $color-link-hover !default;
 
-$color-header-background: #990ae3 !default;
+$color-header-background: #374454 !default;
 $color-header-content: #fff !default;
 
 $color-frame-border: $color-border !default;
@@ -23,30 +23,18 @@ $color-sidebar-heading: rgba($color-text, 0.75) !default;
 
 $highlight-theme: 'github' !default;
 
-$purple:       #990ae3;
-$purple-l:     #c0f;
+$green:       #374454;
+$green-l:     #0fac5f;
+$color_light: #eff1f4;
 
-$green:        #0c6;
-$green-l:      #32ff00;
-
-$blue:         #09f;
-$blue-l:       #00cdff;
-
-$red:          #e12364;
-$red-l:        #ff3264;
-
-$pink:         #d22db9;
-$pink-l:       #ff00cd;
-
-$orange:       #ff9b00;
-$orange-l:     #ffcd64;
-
-$online:       #00cdcd;
-$online-l:     #00e3cf;
+$blue: #0099df;
+$red: #d54226;
+$red-d: darken($red, 5%);
+$yellow: #ffcc66;
 
 $white:        #fff;
 $grey:         #e4e4e4;
-$grey-l:       #f2f2f2;
+$grey-l:       #d1d7df;
 $grey-m:       #f6f6f6;
 
 $grey-d:       #9f9f9f;

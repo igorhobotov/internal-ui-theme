@@ -38,7 +38,7 @@
     &:hover,
     &:focus,
     .is-open & {
-        background: $purple-l;
+        background: $green-l;
     }
 }
 
@@ -76,15 +76,15 @@
     }
 
     &--border-right {
-        border-right: 1px solid darken($purple, 5%);
+        border-right: 1px solid darken($green, 5%);
     }
 
     &--border-left {
-        border-left: 1px solid darken($purple, 5%);
+        border-left: 1px solid darken($green, 5%);
     }
 
     .Header-dropdown.is-open & {
-        background: $purple-l;
+        background: $green-l;
     }
 }
 
