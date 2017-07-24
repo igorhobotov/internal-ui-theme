@@ -1735,10 +1735,7 @@ span.select2-selection.select2-selection--single {
 
 .Header-buttonIconInner {
   top: 50%;
-  margin-top: -.125em;
-  -webkit-transform: rotate(225deg);
-      -ms-transform: rotate(225deg);
-          transform: rotate(225deg); }
+  margin-top: -.125em; }
   .Header-buttonIconInner, .Header-buttonIconInner:after, .Header-buttonIconInner:before {
     transition: all .3s ease;
     content: "";
@@ -1748,29 +1745,12 @@ span.select2-selection.select2-selection--single {
     position: absolute;
     background: currentColor;
     border-radius: 99em; }
-  .Header-buttonIconInner:before, .Header-buttonIconInner:after {
-    top: 50%;
-    margin-top: -.125em; }
+  .Header-buttonIconInner:before {
+    top: -.64em;
+    margin-top: .125em; }
   .Header-buttonIconInner:after {
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg); }
-  .Frame.is-closed .Header-buttonIconInner {
-    -webkit-transform: rotate(0);
-        -ms-transform: rotate(0);
-            transform: rotate(0); }
-    .Frame.is-closed .Header-buttonIconInner:before {
-      top: -.64em;
-      margin-top: .125em;
-      -webkit-transform: rotate(0);
-          -ms-transform: rotate(0);
-              transform: rotate(0); }
-    .Frame.is-closed .Header-buttonIconInner:after {
-      top: .64em;
-      margin-top: -.125em;
-      -webkit-transform: rotate(0);
-          -ms-transform: rotate(0);
-              transform: rotate(0); }
+    top: .64em;
+    margin-top: -.125em; }
 
 .icon {
   width: 1em;
