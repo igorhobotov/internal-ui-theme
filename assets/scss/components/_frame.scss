@@ -60,7 +60,6 @@
     @include border-inline(end, 1px solid $color-frame-border);
     flex: 0 0 auto;
     width: $width-sidebar;
-    background-color: $color-background-offset;
     padding: 20px;
 
     @include mq($until: navCollapse) {
