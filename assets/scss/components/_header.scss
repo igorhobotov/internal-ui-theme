@@ -98,7 +98,6 @@
 .Header-buttonIconInner {
     top: 50%;
     margin-top: -.125em;
-    transform: rotate(225deg);
 
     &,
     &:after,
@@ -113,29 +112,13 @@
         border-radius: 99em;
     }
 
-    &:before,
+    &:before {
+        top: -.64em;
+        margin-top: .125em;
+    }
+
     &:after {
-        top: 50%;
+        top: .64em;
         margin-top: -.125em;
-    }
-
-    &:after {
-        transform: rotate(90deg);
-    }
-
-    .Frame.is-closed & {
-        transform: rotate(0);
-
-        &:before {
-            top: -.64em;
-            margin-top: .125em;
-            transform: rotate(0);
-        }
-
-        &:after {
-            top: .64em;
-            margin-top: -.125em;
-            transform: rotate(0);
-        }
     }
 }
