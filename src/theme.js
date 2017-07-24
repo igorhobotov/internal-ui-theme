@@ -25,7 +25,7 @@ module.exports = function(options){
     config.nav     = config.nav || ['components','docs','assets'];
     config.styles  = [`/${config.static.mount}/css/theme.css`];
     config.scripts = [].concat(config.scripts).filter(url => url).map(url => (url === 'default' ? `/${config.static.mount}/js/mandelbrot.js` : url));
-    config.favicon = config.favicon || `/${config.static.mount}/favicon.ico`;
+    config.favicon = config.favicon || `/${config.static.mount}/favicon.png`;
 
     const assetSourceName = 'components';
 
