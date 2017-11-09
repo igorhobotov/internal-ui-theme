@@ -1,5 +1,19 @@
 {% import "macros/status.nunj" as status %}
 
+<p><b>Eesmärkgid</b></p>
+<ul>
+	<li>Kasutajamugavuse ja disaini ühtsustamine, kvaliteedi tagamine</li>
+	<li>Rakenduste arendamise kiirendamine</li>
+</ul>
+    
+<p>Raamistikku uuendab ja lisab uusi elemente <b>Igor Hobotov</b><br>
+Email: <a href="mailto:igor.hobotov@energia.ee">igor.hobotov@energia.ee</a><br>
+Skype: igorhobotov</p>
+    
+<p>UX ja UI protsessi eest vastutab <b>Evgeni Nikolaevski</b><br>
+Email: <a href="mailto:evgeni.nikolaevski@energia.ee">evgeni.nikolaevski@energia.ee</a><br>
+Skype: evgeni7n</p>
+
 <p>You can browse the component library using the navigation on the left.</p>
 
 <h3>Component statuses</h3>
