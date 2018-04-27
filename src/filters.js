@@ -84,4 +84,8 @@ module.exports = function(theme, env, app){
         return 'style="' + styleAttributeValue + '"';
     });
 
+    env.engine.addFilter('isString', function(obj) {
+        return typeof obj === 'string';
+    });
+
  };
