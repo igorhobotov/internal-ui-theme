@@ -68,4 +68,20 @@ module.exports = function(theme, env, app){
         });
     });
 
+    env.engine.addFilter('displayStyles', function (stylesObj) {
+        if (({}).toString.call(stylesObj) !== '[object Object]') {
+            return '';
+        }
+
+        const keys = Object.keys(stylesObj);
+
+        if (!keys.length) {
+            return '';
+        }
+
+        const styleAttributeValue = keys.map(function (rule) { return rule + ':' + stylesObj[rule] }).join(';');
+
+        return 'style="' + styleAttributeValue + '"';
+    });
+
  };
