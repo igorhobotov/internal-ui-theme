@@ -1,4 +1,6 @@
 .overview-intro {
+  margin: 0;
+
   > * {
     padding: 2rem;
   }
@@ -46,7 +48,7 @@
   }
 }
 .overview-component__title a {
-  color: inherit;
+  color: inherit !important;
 }
 .overview-component__preview {
   max-width: 64em;
