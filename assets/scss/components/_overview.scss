@@ -1,0 +1,92 @@
+.overview-intro {
+  > * {
+    padding: 2rem;
+  }
+
+  p {
+    font-size: 1.3em;
+    line-height: 1.5;
+    max-width: 48em;
+  }
+}
+.overview-intro__jumbotron {
+  color: #ffffff;
+  background-color: #0fac5f;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+
+  * + * {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    color: #ffffff;
+  }
+
+  .btn {
+    font-size: 1.5em;
+    background-color: white;
+    color: #0fac5f;
+  }
+}
+
+.overview-component {
+  padding: 3rem;
+
+  &:nth-child(even) {
+    background-color: whitesmoke;
+  }
+
+  + .overview-component {
+    margin-top: 2rem;
+  }
+}
+.overview-component__title a {
+  color: inherit;
+}
+.overview-component__preview {
+  max-width: 64em;
+  margin: 0 -1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+
+  ul {
+    padding-left: 0;
+  }
+}
+.overview-component__variant {
+  padding: .5em 1em;
+  min-height: 0 !important;
+
+  &--nav,
+  &--header,
+  &--grid,
+  &--tabs,
+  &--progress,
+  &--tooltip,
+  &--heading,
+  &--separator {
+    min-width: 100%;
+    padding: 2em 1em;
+  }
+}
+
+.Document {
+  padding: 0;
+}
+.Document-header {
+  display: none;
+}
+.Prose {
+  max-width: none;
+}
+.Prose .overview-component__preview li {
+  list-style-type: none;
+  margin-bottom: 0;
+}

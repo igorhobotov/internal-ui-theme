@@ -1849,6 +1849,80 @@ span.select2-selection.select2-selection--single {
 .navigation-search {
   padding: 0 0 20px; }
 
+.overview-intro > * {
+  padding: 2rem; }
+
+.overview-intro p {
+  font-size: 1.3em;
+  line-height: 1.5;
+  max-width: 48em; }
+
+.overview-intro__jumbotron {
+  color: #ffffff;
+  background-color: #0fac5f;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 20rem; }
+  .overview-intro__jumbotron * + * {
+    margin-top: 2rem; }
+  .overview-intro__jumbotron h1 {
+    color: #ffffff; }
+  .overview-intro__jumbotron .btn {
+    font-size: 1.5em;
+    background-color: white;
+    color: #0fac5f; }
+
+.overview-component {
+  padding: 3rem; }
+  .overview-component:nth-child(even) {
+    background-color: whitesmoke; }
+  .overview-component + .overview-component {
+    margin-top: 2rem; }
+
+.overview-component__title a {
+  color: inherit; }
+
+.overview-component__preview {
+  max-width: 64em;
+  margin: 0 -1em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start; }
+  .overview-component__preview ul {
+    padding-left: 0; }
+
+.overview-component__variant {
+  padding: .5em 1em;
+  min-height: 0 !important; }
+  .overview-component__variant--nav, .overview-component__variant--header, .overview-component__variant--grid, .overview-component__variant--tabs, .overview-component__variant--progress, .overview-component__variant--tooltip, .overview-component__variant--heading, .overview-component__variant--separator {
+    min-width: 100%;
+    padding: 2em 1em; }
+
+.Document {
+  padding: 0; }
+
+.Document-header {
+  display: none; }
+
+.Prose {
+  max-width: none; }
+
+.Prose .overview-component__preview li {
+  list-style-type: none;
+  margin-bottom: 0; }
+
 .Pen {
   background: white;
   padding: 20px 40px 40px; }
