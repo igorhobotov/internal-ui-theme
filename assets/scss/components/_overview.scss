@@ -39,7 +39,7 @@
 .overview-component {
   padding: 3rem;
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background-color: whitesmoke;
   }
 

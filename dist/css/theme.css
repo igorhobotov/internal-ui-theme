@@ -1882,7 +1882,7 @@ span.select2-selection.select2-selection--single {
 
 .overview-component {
   padding: 3rem; }
-  .overview-component:nth-child(even) {
+  .overview-component:nth-child(odd) {
     background-color: whitesmoke; }
   .overview-component + .overview-component {
     margin-top: 2rem; }
