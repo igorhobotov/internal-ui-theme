@@ -27,7 +27,7 @@
     color: #ffffff;
   }
 
-  .btn {
+  a.btn {
     font-size: 1.5em;
     background-color: white;
     color: #0fac5f;
@@ -77,16 +77,16 @@
   }
 }
 
-.Document {
+.Document--overview {
   padding: 0;
 }
-.Document-header {
+.Document-header--overview {
   display: none;
 }
-.Prose {
+.Prose--overview {
   max-width: none;
 }
-.Prose .overview-component__preview li {
+.Prose--overview .overview-component__preview li {
   list-style-type: none;
   margin-bottom: 0;
 }

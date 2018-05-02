@@ -1874,7 +1874,7 @@ span.select2-selection.select2-selection--single {
     margin-top: 2rem; }
   .overview-intro__jumbotron h1 {
     color: #ffffff; }
-  .overview-intro__jumbotron .btn {
+  .overview-intro__jumbotron a.btn {
     font-size: 1.5em;
     background-color: white;
     color: #0fac5f; }
@@ -1910,16 +1910,16 @@ span.select2-selection.select2-selection--single {
     min-width: 100%;
     padding: 2em 1em; }
 
-.Document {
+.Document--overview {
   padding: 0; }
 
-.Document-header {
+.Document-header--overview {
   display: none; }
 
-.Prose {
+.Prose--overview {
   max-width: none; }
 
-.Prose .overview-component__preview li {
+.Prose--overview .overview-component__preview li {
   list-style-type: none;
   margin-bottom: 0; }
 

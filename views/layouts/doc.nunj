@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<div class="Document">
+<div class="Document{% if not doc %} Document--overview{% endif -%}">
 
-    <div class="Document-header">
+    <div class="Document-header{% if not doc %} Document-header--overview{% endif -%}">
         {% block docHeader %}
         <h1 class="Document-title">{{ page.title }}</h1>
         {% if status %}{{ status }}{% endif %}
         {% endblock %}
     </div>
 
-    <div class="Document-content">
+    <div class="Document-content{% if not doc %} Document-content--overview{% endif -%}">
 
     {% block docContent %}{% endblock %}
 
