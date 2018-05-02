@@ -63,18 +63,17 @@
 .overview-component__variant {
   padding: .5em 1em;
   min-height: 0 !important;
-
-  &--nav,
-  &--header,
-  &--grid,
-  &--tabs,
-  &--progress,
-  &--tooltip,
-  &--heading,
-  &--separator {
-    min-width: 100%;
-    padding: 2em 1em;
-  }
+}
+[class*="overview-component__variant--nav"],
+[class*="overview-component__variant--header"],
+[class*="overview-component__variant--grid"],
+[class*="overview-component__variant--tabs"],
+[class*="overview-component__variant--progress"],
+[class*="overview-component__variant--tooltip"],
+[class*="overview-component__variant--heading"],
+[class*="overview-component__variant--separator"] {
+  min-width: 100%;
+  padding: 2em 1em;
 }
 
 .Document--overview {
@@ -84,7 +83,7 @@
   display: none;
 }
 .Prose--overview {
-  max-width: none;
+  max-width: none !important;
 }
 .Prose--overview .overview-component__preview li {
   list-style-type: none;

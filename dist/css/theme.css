@@ -1906,9 +1906,17 @@ span.select2-selection.select2-selection--single {
 .overview-component__variant {
   padding: .5em 1em;
   min-height: 0 !important; }
-  .overview-component__variant--nav, .overview-component__variant--header, .overview-component__variant--grid, .overview-component__variant--tabs, .overview-component__variant--progress, .overview-component__variant--tooltip, .overview-component__variant--heading, .overview-component__variant--separator {
-    min-width: 100%;
-    padding: 2em 1em; }
+
+[class*="overview-component__variant--nav"],
+[class*="overview-component__variant--header"],
+[class*="overview-component__variant--grid"],
+[class*="overview-component__variant--tabs"],
+[class*="overview-component__variant--progress"],
+[class*="overview-component__variant--tooltip"],
+[class*="overview-component__variant--heading"],
+[class*="overview-component__variant--separator"] {
+  min-width: 100%;
+  padding: 2em 1em; }
 
 .Document--overview {
   padding: 0; }
@@ -1917,7 +1925,7 @@ span.select2-selection.select2-selection--single {
   display: none; }
 
 .Prose--overview {
-  max-width: none; }
+  max-width: none !important; }
 
 .Prose--overview .overview-component__preview li {
   list-style-type: none;
