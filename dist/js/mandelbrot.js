@@ -851,7 +851,6 @@ $(function () {
             fragment: '#pjax-container',
             timeout: 10000
         }).on('pjax:start', function (e, xhr, options) {
-            console.log('halloo');
             frame.startLoad();
             events.trigger('main-content-preload', options.url);
         }).on('pjax:end', function () {
