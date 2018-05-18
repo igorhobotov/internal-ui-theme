@@ -20,32 +20,42 @@ global.fractal = {
     events: events
 };
 
-const frame     = framer($('#frame'));
-const navTrees  = $.map($('[data-behaviour="tree"]'), t => new Tree(t));
-let pens        = [];
+$(function () {
+    const frame     = framer($('#frame'));
+    const navTrees  = $.map($('[data-behaviour="tree"]'), t => new Tree(t));
+    let pens        = [];
 
-loadPen();
+    loadPen();
 
-if (frctl.env == 'server') {
-    doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
-        fragment: '#pjax-container',
-        timeout: 10000
-    }).on('pjax:start', function(e, xhr, options){
+    if (frctl.env == 'server') {
         if (utils.isSmallScreen()) {
             frame.closeSidebar();
+        } else {
+            if (location.pathname === '/') {
+                frame.closeSidebar(true);
+            } else {
+                frame.openSidebar(true);
+            }
         }
-        frame.startLoad();
-        events.trigger('main-content-preload', options.url);
-    }).on('pjax:end', function(){
-        events.trigger('main-content-loaded');
-        frame.endLoad();
-    });
-}
 
-events.on('main-content-loaded', loadPen);
+        doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
+            fragment: '#pjax-container',
+            timeout: 10000
+        }).on('pjax:start', function(e, xhr, options){
+            console.log('halloo');
+            frame.startLoad();
+            events.trigger('main-content-preload', options.url);
+        }).on('pjax:end', function(){
+            events.trigger('main-content-loaded');
+            frame.endLoad();
+        });
+    }
 
-function loadPen(){
-    setTimeout(function(){
-        pens = $.map($('[data-behaviour="pen"]'), p => new Pen(p));
-    }, 1);
-}
+    events.on('main-content-loaded', loadPen);
+
+    function loadPen(){
+        setTimeout(function(){
+            pens = $.map($('[data-behaviour="pen"]'), p => new Pen(p));
+        }, 1);
+    }
+});

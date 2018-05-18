@@ -1,3 +1,4 @@
 <link rel="shortcut icon" href="{{ path(frctl.theme.get('favicon')) }}" type="image/png">
 {% include 'partials/stylesheets.nunj' %}
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ frctl.get('project.title') }}</title>
+{% include 'partials/scripts.nunj' %}

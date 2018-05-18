@@ -69,7 +69,7 @@ module.exports = function(element){
         document.location.reload(true);
     });
 
-    function closeSidebar(){
+    function closeSidebar(immediate){
         if (dragOccuring || (!isInitialClose && sidebarState == 'closed')) return;
         const w = sidebar.outerWidth();
         let translate = (dir == 'rtl') ? w + 'px' : (-1 * w) + 'px';
@@ -81,7 +81,7 @@ module.exports = function(element){
         } else {
             sidebarProps.marginRight = (-1 * w) + 'px';
         }
-        sidebarProps.transition = isInitialClose ? 'none' : '.3s ease all';
+        sidebarProps.transition = immediate || isInitialClose ? 'none' : '.3s ease all';
         body.css(sidebarProps);
         sidebarState = 'closed';
         el.addClass('is-closed');
@@ -89,13 +89,13 @@ module.exports = function(element){
         isInitialClose = false;
     }
 
-    function openSidebar(){
+    function openSidebar(immediate){
         if (dragOccuring || sidebarState == 'open') return;
 
         body.css({
             marginRight: 0,
             marginLeft: 0,
-            transition: '.3s ease all',
+            transition: immediate ? 'none' : '.3s ease all',
             transform: `translate3d(0, 0, 0)`
         });
         sidebarState = 'open';
