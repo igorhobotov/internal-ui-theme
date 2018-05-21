@@ -836,28 +836,26 @@ $(function () {
 
     loadPen();
 
-    if (frctl.env == 'server') {
-        if (utils.isSmallScreen()) {
-            frame.closeSidebar();
+    if (utils.isSmallScreen()) {
+        frame.closeSidebar();
+    } else {
+        if (location.pathname === '/' || location.pathname === '/index.html') {
+            frame.closeSidebar(true);
         } else {
-            if (location.pathname === '/') {
-                frame.closeSidebar(true);
-            } else {
-                frame.openSidebar(true);
-            }
+            frame.openSidebar(true);
         }
-
-        doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
-            fragment: '#pjax-container',
-            timeout: 10000
-        }).on('pjax:start', function (e, xhr, options) {
-            frame.startLoad();
-            events.trigger('main-content-preload', options.url);
-        }).on('pjax:end', function () {
-            events.trigger('main-content-loaded');
-            frame.endLoad();
-        });
     }
+
+    doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
+        fragment: '#pjax-container',
+        timeout: 10000
+    }).on('pjax:start', function (e, xhr, options) {
+        frame.startLoad();
+        events.trigger('main-content-preload', options.url);
+    }).on('pjax:end', function () {
+        events.trigger('main-content-loaded');
+        frame.endLoad();
+    });
 
     events.on('main-content-loaded', loadPen);
 
