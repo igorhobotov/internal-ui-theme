@@ -3,7 +3,7 @@
 require("babel-polyfill");
 
 global.jQuery    = require('jquery');
-const pjax       = require('jquery-pjax');
+// const pjax       = require('jquery-pjax');
 const $          = global.jQuery;
 const doc        = $(document);
 const frctl      = window.frctl || {};
@@ -37,7 +37,7 @@ $(function () {
         }
     }
 
-    doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
+    /*doc.pjax('a[data-pjax], code a[href], .Prose a[href]:not([data-no-pjax]), .Browser a[href]:not([data-no-pjax])', '#pjax-container', {
         fragment: '#pjax-container',
         timeout: 10000
     }).on('pjax:start', function(e, xhr, options){
@@ -46,7 +46,7 @@ $(function () {
     }).on('pjax:end', function(){
         events.trigger('main-content-loaded');
         frame.endLoad();
-    });
+    });*/
 
     events.on('main-content-loaded', loadPen);
 
