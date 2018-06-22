@@ -839,7 +839,7 @@ $(function () {
     if (utils.isSmallScreen()) {
         frame.closeSidebar();
     } else {
-        if (location.pathname === '/' || location.pathname === '/index.html') {
+        if (window.isOverviewPage) {
             frame.closeSidebar(true);
         } else {
             frame.openSidebar(true);
