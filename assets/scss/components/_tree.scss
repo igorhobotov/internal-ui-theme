@@ -2,6 +2,10 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 10px;
+
+    #tree-components & {
+        display: none;
+    }
 }
 
 .Tree-collection {
@@ -37,15 +41,24 @@
     user-select: none;
     color: $color-link-hover;
     border-top: 1px solid $color-border;
-    border-bottom: 1px solid $color-border;
-    margin-top: -1px;
 
     &:hover {
         color: $color-ui-hover;
     }
 
+    .Tree-depth-2 > & {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
     .Tree-depth-3 & {
         border-color: transparent;
+        padding-top: 0.375rem;
+        padding-bottom: 0.375rem;
+    }
+
+    .Tree-item:first-child & {
+        border-top: 0;
     }
 }
 
@@ -61,6 +74,10 @@
     height: 12px;
     content: "";
     transform: rotate(180deg);
+
+    .Tree-depth-3 & {
+        top: 0.7rem;
+    }
 }
 
 .Tree-item {
@@ -90,4 +107,9 @@
 
 .Tree-collectionItems {
     padding-left: 20px;
+
+    .Tree-depth-2 > & {
+        padding-top: .375rem;
+        padding-bottom: .375rem;
+    }
 }
